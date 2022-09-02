@@ -1,17 +1,17 @@
 name: Custom Deployment
 vars:
-  numberOfReplicas: 3
-  containerPort: 80
-  imageName: nginx
-  appName: nginx
+  number Of Replicas: 3
+  container Port: 80
+  image Name: nginx
+  app Name: nginx
 services:
   iluyl5yi0ff:
     settings:
       spec:
-        replicas: $(#ref.vars.numberOfReplicas)
+        replicas: $(#ref.vars.number Of Replicas)
         selector:
           matchLabels:
-            app: $(#ref.vars.appName)
+            app: $(#ref.vars.app Name)
         template:
           metadata:
             labels:
@@ -19,9 +19,9 @@ services:
           spec:
             containers:
             - name: nginx
-              image: $(#ref.vars.imageName):latest
+              image: $(#ref.vars.image Name):latest
               ports:
-              - containerPort: $(#ref.vars.containerPort)
+              - containerPort: $(#ref.vars.container Port)
     type: Deployment.K8s
     name: deployment
     namespace: default
