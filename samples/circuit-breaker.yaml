@@ -1,9 +1,9 @@
 name: IstioCircuitBreaker
 vars:
-  forHost: reviews
-  maximumTCPConnections: 1
-  maximumHTTPRequestsPerConnection: 1
-  outlierDetectionForConsecutive5xxErrors: 1
+  for Host: reviews
+  maximum TCP Connections: 1
+  maximum HTTP requests Per Connection: 1
+  outlier Detection For Consecutive 5xx Errors: 1
 services:
   istiocircuitbreaker:
     name: istiocircuitbreaker
@@ -11,16 +11,16 @@ services:
     version: 1.12.9
     namespace: default
     settings:
-      host: $(#ref.vars.forHost)
+      host: $(#ref.vars.for Host)
       trafficPolicy:
         connectionPool:
           tcp:
-            maxConnections: $(#ref.vars.maximumTCPConnections)
+            maxConnections: $(#ref.vars.maximum TCP Connections)
           http:
             http1MaxPendingRequests: 1
-            maxRequestsPerConnection: $(#ref.vars.maximumHTTPRequestsPerConnection)
+            maxRequestsPerConnection: $(#ref.vars.maximum HTTP requests Per Connection)
         outlierDetection:
-          consecutive5xxErrors: $(#ref.vars.outlierDetectionForConsecutive5xxErrors)
+          consecutive5xxErrors: $(#ref.vars.outlier Detection For Consecutive 5xx Errors)
           interval: 1s
           baseEjectionTime: 3m
           maxEjectionPercent: 100

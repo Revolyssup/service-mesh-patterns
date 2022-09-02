@@ -3,7 +3,7 @@ services:
   istioCircuitBreaker:
     type: $(#use https://raw.githubusercontent.com/Revolyssup/service-mesh-patterns/new/samples/circuit-breaker.yaml)
     settings: 
-      forHost: reviews
-      maximumTCPConnections: 1
-      maximumHTTPRequestsPerConnection: 1
-      outlierDetectionForConsecutive5xxErrors: 1
+      for Host: reviews
+      maximum TCP Connections: 1
+      maximum HTTP requests Per Connection: 1
+      outlier Detection For Consecutive 5xx Errors: 1
