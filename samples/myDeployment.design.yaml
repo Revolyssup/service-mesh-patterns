@@ -1,4 +1,4 @@
-name: CustomDeployment
+name: Custom Deployment
 vars:
   numberOfReplicas: 3
   containerPort: 80

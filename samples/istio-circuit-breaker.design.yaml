@@ -1,4 +1,4 @@
-name: IstioCircuitBreaker
+name: Istio Circuit Breaker
 services:
   istioCircuitBreaker:
     type: $(#use https://raw.githubusercontent.com/Revolyssup/service-mesh-patterns/new/samples/circuit-breaker.yaml)
