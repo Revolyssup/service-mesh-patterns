@@ -1,6 +1,6 @@
 name: IstioCircuitBreaker
 services:
-  nginxDeployment:
+  istioCircuitBreaker:
     type: $(#use https://raw.githubusercontent.com/Revolyssup/service-mesh-patterns/new/samples/circuit-breaker.yaml)
     settings: 
       forHost: reviews

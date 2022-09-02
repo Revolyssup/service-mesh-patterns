@@ -1,4 +1,4 @@
-name: WorkshopIstio
+name: IstioCircuitBreaker
 vars:
   forHost: reviews
   maximumTCPConnections: 1
