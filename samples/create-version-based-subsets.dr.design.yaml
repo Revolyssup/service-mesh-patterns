@@ -1,0 +1,17 @@
+name: Version Based Subsets for service
+vars: 
+  service Name: reviews
+  namespace: default
+  version: v1
+services:
+  reviews:
+    name: $(#ref.vars.service Name)
+    type: DestinationRule.Istio
+    version: 1.12.9
+    namespace:  $(#ref.vars.namespace)
+    settings:
+      host: $(#ref.vars.service Name)
+      subsets:
+      - labels:
+          version: $(#ref.vars.version)
+        name: $(#ref.vars.version)

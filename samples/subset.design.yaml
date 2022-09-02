@@ -1,0 +1,8 @@
+name: Subset
+services:
+  createSubset:
+    type: $(#use https://raw.githubusercontent.com/revolyssup/service-mesh-patterns/new/samples/create-version-based-subsets.dr.design.yaml)
+    settings: 
+        service Name: reviews
+        namespace: default
+        version: v1
