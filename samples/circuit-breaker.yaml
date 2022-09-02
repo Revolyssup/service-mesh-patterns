@@ -1,4 +1,4 @@
-name: IstioCircuitBreaker
+name: Istio Circuit Breaker
 vars:
   for Host: reviews
   maximum TCP Connections: 1
