@@ -23,5 +23,5 @@ services:
               ports:
               - containerPort: $(#ref.vars.containerPort)
     type: Deployment.K8s
-    name: Deployment
+    name: deployment
     namespace: default

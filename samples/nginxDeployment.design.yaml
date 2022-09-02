@@ -4,7 +4,6 @@ services:
     type: $(#use https://raw.githubusercontent.com/Revolyssup/service-mesh-patterns/new/samples/myDeployment.design.yaml)
     settings: 
         numberOfReplicas: 2
-        imageVersion: 1.14.2
         containerPort: 80
         imageName: nginx
         appName: nginx
