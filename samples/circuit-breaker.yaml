@@ -1,0 +1,26 @@
+name: WorkshopIstio
+vars:
+  forHost: reviews
+  maximumTCPConnections: 1
+  maximumHTTPRequestsPerConnection: 1
+  outlierDetectionForConsecutive5xxErrors: 1
+services:
+  istiocircuitbreaker:
+    name: istiocircuitbreaker
+    type: DestinationRule.Istio
+    version: 1.12.9
+    namespace: default
+    settings:
+      host: $(#ref.vars.forHost)
+      trafficPolicy:
+        connectionPool:
+          tcp:
+            maxConnections: $(#ref.vars.maximumTCPConnections)
+          http:
+            http1MaxPendingRequests: 1
+            maxRequestsPerConnection: $(#ref.vars.maximumHTTPRequestsPerConnection)
+        outlierDetection:
+          consecutive5xxErrors: $(#ref.vars.outlierDetectionForConsecutive5xxErrors)
+          interval: 1s
+          baseEjectionTime: 3m
+          maxEjectionPercent: 100
