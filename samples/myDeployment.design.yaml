@@ -1,7 +1,6 @@
 name: CustomDeployment
 vars:
   numberOfReplicas: 3
-  imageVersion: 1.14.2
   containerPort: 80
   imageName: nginx
   appName: nginx
@@ -20,7 +19,7 @@ services:
           spec:
             containers:
             - name: nginx
-              image: $(#ref.vars.imageName):$(#ref.vars.imageVersion)
+              image: $(#ref.vars.imageName):latest
               ports:
               - containerPort: $(#ref.vars.containerPort)
     type: Deployment.K8s
