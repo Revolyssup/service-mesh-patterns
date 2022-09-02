@@ -1,0 +1,28 @@
+name: CustomDeployment
+vars:
+  numberOfReplicas: 3
+  imageVersion: 1.14.2
+  containerPort: 80
+  imageName: nginx
+  appName: nginx
+services:
+  iluyl5yi0ff:
+    settings:
+      spec:
+        replicas: $(#ref.vars.numberOfReplicas)
+        selector:
+          matchLabels:
+            app: $(#ref.vars.appName)
+        template:
+          metadata:
+            labels:
+              app: $(#ref.vars.appName)
+          spec:
+            containers:
+            - name: nginx
+              image: $(#ref.vars.imageName):$(#ref.vars.imageVersion)
+              ports:
+              - containerPort: $(#ref.vars.containerPort)
+    type: Deployment.K8s
+    name: Deployment
+    namespace: default
